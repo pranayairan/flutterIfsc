@@ -21,8 +21,10 @@ class UiUtils {
     return TextStyle(fontSize: Font_Size_List_Items, color: Colors.redAccent, fontWeight: FontWeight.bold);
   }
 
-  static TextStyle getTextStyleForListSubTitle() {
-    return TextStyle(fontSize: Font_Size_List_Title);
+  static TextStyle getTextStyleForListSubTitle({bool isBold = false}) {
+    return isBold
+        ? TextStyle(fontSize: Font_Size_List_Title, fontWeight: FontWeight.bold)
+        : TextStyle(fontSize: Font_Size_List_Title);
   }
 
   static TextStyle getSmallTextStyleForListSubTitle() {

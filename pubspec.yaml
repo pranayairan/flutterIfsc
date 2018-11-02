@@ -51,7 +51,14 @@ flutter:
     - images/ifsc_state.png
     - images/save.png
     - images/sms.png
-    - images/whatsapp.png
+    - images/ic_atm.png
+    - images/ic_branch.png
+    - images/ic_compound.png
+    - images/ic_currency_converter.png
+    - images/ic_customer_care.png
+    - images/ic_emi_cal.png
+    - images/ic_search.png
+    - images/slider_header.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

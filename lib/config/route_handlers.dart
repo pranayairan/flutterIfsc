@@ -1,5 +1,6 @@
 import 'package:bank_ifsc_flutter/network/model/bank_data.dart';
 import 'package:bank_ifsc_flutter/pages/bank_detail_page.dart';
+import 'package:bank_ifsc_flutter/pages/currency_converter_page.dart';
 import 'package:bank_ifsc_flutter/pages/home_page.dart';
 import 'package:bank_ifsc_flutter/pages/search_bank_page.dart';
 import 'package:fluro/fluro.dart';
@@ -33,6 +34,10 @@ var bankDetailsRouteHandler = new Handler(handlerFunc: (BuildContext context, Ma
         rtgs: params["bankRtgs"]?.first),
     bankIFSC: params["bankIFSC"]?.first,
   );
+});
+
+var currencyConverterRouteHandler = new Handler(handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return new CurrencyConverterPage();
 });
 
 //var demoFunctionHandler = new Handler(

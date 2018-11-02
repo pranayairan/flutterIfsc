@@ -1,5 +1,6 @@
 import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 import 'package:bank_ifsc_flutter/config/application.dart';
+import 'package:bank_ifsc_flutter/config/routes.dart';
 import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
 import 'package:bank_ifsc_flutter/utils/bank_data.dart';
 import 'package:bank_ifsc_flutter/utils/images.dart';
@@ -9,8 +10,8 @@ import 'package:bank_ifsc_flutter/widgets/w_fancy_text_box.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
-  GlobalKey<AutoCompleteTextFieldState<String>> key2 = GlobalKey();
+  final GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
+  final GlobalKey<AutoCompleteTextFieldState<String>> key2 = GlobalKey();
 
   @override
   State<StatefulWidget> createState() {
@@ -39,6 +40,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: Text(homePageTitle),
         ),
+        drawer: _buildDrawerWidget(context),
         body: Builder(
           builder: (context) => Container(
                 margin: EdgeInsets.all(12.0),
@@ -64,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                           RaisedButton(
                             onPressed: () {
                               if (bankIFSCController.text.isNotEmpty) {
-                                String route = "/bankDetails?bankIFSC=${bankIFSCController.text}";
+                                String route = "${Routes.bankDetails}?bankIFSC=${bankIFSCController.text}";
                                 Application.router.navigateTo(context, route);
                               } else {
                                 String bankName = bankNameTextField.textValue;
@@ -77,7 +79,8 @@ class _HomePageState extends State<HomePage> {
                                     bankState.isNotEmpty &&
                                     bankCity != null &&
                                     bankCity.isNotEmpty) {
-                                  String route = "/search?bankName=$bankName&bankState=$bankState&bankCity=$bankCity"
+                                  String route =
+                                      "${Routes.searchBank}?bankName=$bankName&bankState=$bankState&bankCity=$bankCity"
                                       "&bankBranch=${bankBranchController.text}";
                                   Application.router.navigateTo(context, route);
                                 } else {
@@ -98,5 +101,60 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
         ));
+  }
+
+  Drawer _buildDrawerWidget(BuildContext context) {
+    return Drawer(
+      child: Column(
+        children: <Widget>[
+          Container(
+            child: Image.asset(Slider_Image),
+          ),
+          ListTile(
+            leading: Image.asset(IC_search, width: 28.0, height: 28.0),
+            title: Text(drawerFindIFSC),
+            onTap: () {},
+            dense: true,
+          ),
+          Divider(),
+          ListTile(
+            leading: Image.asset(IC_ATM, width: 28.0, height: 28.0),
+            title: Text(drawerBalanceCheck),
+            onTap: () {},
+            dense: true,
+          ),
+          Divider(),
+          ListTile(
+            leading: Image.asset(IC_Currency, width: 28.0, height: 28.0),
+            title: Text(drawerCurrencyConverter),
+            onTap: () {
+              Application.router.navigateTo(context, Routes.currencyConverter);
+            },
+            dense: true,
+          ),
+          Divider(),
+          ListTile(
+            leading: Image.asset(IC_EMI, width: 28.0, height: 28.0),
+            title: Text(drawerEMICalc),
+            onTap: () {},
+            dense: true,
+          ),
+          Divider(),
+          ListTile(
+            leading: Image.asset(IC_Compound, width: 28.0, height: 28.0),
+            title: Text(drawerCompoundInt),
+            onTap: () {},
+            dense: true,
+          ),
+          Divider(),
+          ListTile(
+            leading: Image.asset(IC_Customer, width: 28.0, height: 28.0),
+            title: Text(drawerCustomerCare),
+            onTap: () {},
+            dense: true,
+          )
+        ],
+      ),
+    );
   }
 }

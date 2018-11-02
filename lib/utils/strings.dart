@@ -5,6 +5,13 @@ const String bankCityEditBoxHint = "City";
 const String bankBranchEditBoxHint = "Branch (optional)";
 const String bankIfscEditBoxHint = "IFSC Code";
 
+const String drawerFindIFSC = "Find IFSC";
+const String drawerBalanceCheck = "Balance Check";
+const String drawerCurrencyConverter = "Currency Converter";
+const String drawerEMICalc = "EMI Calculator";
+const String drawerCompoundInt = "Compound Interest";
+const String drawerCustomerCare = "Bank Customer Care";
+
 const String bankSearch = "Search";
 const String bankSearchRequiredField = "Please enter Bank Name, City and State or Search by IFSC";
 
@@ -22,6 +29,8 @@ const String bankDetailsContact = "Contact:";
 const String bankDetailsAddress = "Address:";
 const String bankDetailsDistrict = "District:";
 const String bankDetailsState = "State:";
+
+const String currencyConverterTitle = "Currency Converter";
 
 // common strings
 const String OR = "OR";

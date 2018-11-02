@@ -7,6 +7,7 @@ class Routes {
   static String root = "/";
   static String searchBank = "/search";
   static String bankDetails = "/bankDetails";
+  static String currencyConverter = "/currencyConverter";
   static String demoFunc = "/demo/func";
 
   static void configureRoutes(Router router) {
@@ -16,5 +17,6 @@ class Routes {
     router.define(root, handler: rootHandler);
     router.define(searchBank, handler: searchBankRouteHandler);
     router.define(bankDetails, handler: bankDetailsRouteHandler);
+    router.define(currencyConverter, handler: currencyConverterRouteHandler);
   }
 }
