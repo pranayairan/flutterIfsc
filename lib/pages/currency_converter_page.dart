@@ -40,7 +40,7 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text(
-                            "From :",
+                            currencyConverterFrom,
                             style: UiUtils.getTextStyleForListSubTitle(isBold: true),
                           ),
                           _getDropDownWidget(
@@ -57,7 +57,7 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text(
-                            "To :",
+                            currencyConverterTo,
                             style: UiUtils.getTextStyleForListSubTitle(isBold: true),
                           ),
                           _getDropDownWidget(
@@ -74,7 +74,7 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text(
-                            "Amount :",
+                            currencyConverterAmount,
                             style: UiUtils.getTextStyleForListSubTitle(isBold: true),
                           ),
                           SizedBox(width: 60.0),
@@ -90,7 +90,7 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
                         onPressed: () {
                           _loadExchangeRateFromAPI(fromCurrency, toCurrency);
                         },
-                        child: Text("Get Rates"),
+                        child: Text(currencyConverterGetRates),
                         color: Theme.of(context).primaryColorLight,
                       )
                     ],
@@ -107,7 +107,7 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Text(
-                                "Exchange Rate:",
+                                currencyConverterExchangeRate,
                                 style: UiUtils.getTextStyleForListSubTitle(isBold: true),
                               ),
                               Text(
@@ -121,7 +121,7 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Text(
-                                "Value:",
+                                currencyConverterValue,
                                 style: UiUtils.getTextStyleForListSubTitle(isBold: true),
                               ),
                               Text(
@@ -159,7 +159,7 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
       ResponseModel<double> responseModel =
           await OtherAPI().getRates(fromCurrency: fromCurrency, toCurrency: toCurrency);
       if (responseModel.errorCode == 200 && responseModel.data != null) {
-        FocusScope.of(context).requestFocus(new FocusNode());
+        WidgetUtils.dismissKeyboard(context);
         setState(() {
           exchangeRate = responseModel.data;
         });

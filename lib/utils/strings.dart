@@ -31,6 +31,30 @@ const String bankDetailsDistrict = "District:";
 const String bankDetailsState = "State:";
 
 const String currencyConverterTitle = "Currency Converter";
+const String currencyConverterFrom = "From :";
+const String currencyConverterTo = "To :";
+const String currencyConverterAmount = "Amount :";
+const String currencyConverterGetRates = "Get Rates";
+const String currencyConverterExchangeRate = "Exchange Rate:";
+const String currencyConverterValue = "Value:";
+const String currencyConverter = "";
+
+
+const String compoundInterestTitle = "Compound Interest";
+const String compoundInterestPrincipalAmt = "Principal Amount";
+const String compoundInterestPrincipalAmtEx = "For eg. 100000";
+const String compoundInterestAnnualInt = "Annual Interest Rate %";
+const String compoundInterestAnnualIntEx = "For eg. 2.25 per annum";
+const String compoundInterestPeriod = "Period (months)";
+const String compoundInterestPeriodEx = "For eg. 12";
+const String compoundInterestMonthlyDep = "Monthly Deposit";
+const String compoundInterestMonthlyDepEx = "For eg. 500";
+const String compoundInterestCompounded = "Compounded:";
+const String compoundInterestReset = "Reset";
+const String compoundInterestCalculate = "Calculate";
+const String compoundInterestTotalPrincipal = "Total Principal";
+const String compoundInterestInterestAmount = "Interest Amount";
+const String compoundInterestMaturityValue = "Maturity Value";
 
 // common strings
 const String OR = "OR";

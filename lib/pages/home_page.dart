@@ -113,7 +113,9 @@ class _HomePageState extends State<HomePage> {
           ListTile(
             leading: Image.asset(IC_search, width: 28.0, height: 28.0),
             title: Text(drawerFindIFSC),
-            onTap: () {},
+            onTap: () {
+              Application.router.navigateTo(context, Routes.root);
+            },
             dense: true,
           ),
           Divider(),
@@ -128,6 +130,7 @@ class _HomePageState extends State<HomePage> {
             leading: Image.asset(IC_Currency, width: 28.0, height: 28.0),
             title: Text(drawerCurrencyConverter),
             onTap: () {
+              Application.router.pop(context);
               Application.router.navigateTo(context, Routes.currencyConverter);
             },
             dense: true,
@@ -143,7 +146,10 @@ class _HomePageState extends State<HomePage> {
           ListTile(
             leading: Image.asset(IC_Compound, width: 28.0, height: 28.0),
             title: Text(drawerCompoundInt),
-            onTap: () {},
+            onTap: () {
+              Application.router.pop(context);
+              Application.router.navigateTo(context, Routes.compoundInterest);
+            },
             dense: true,
           ),
           Divider(),

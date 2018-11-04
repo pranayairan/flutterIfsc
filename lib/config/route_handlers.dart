@@ -5,6 +5,7 @@ import 'package:bank_ifsc_flutter/pages/home_page.dart';
 import 'package:bank_ifsc_flutter/pages/search_bank_page.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:bank_ifsc_flutter/pages/compound_interest_page.dart';
 
 // route all request to home page
 var rootHandler = new Handler(handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -38,6 +39,10 @@ var bankDetailsRouteHandler = new Handler(handlerFunc: (BuildContext context, Ma
 
 var currencyConverterRouteHandler = new Handler(handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return new CurrencyConverterPage();
+});
+
+var compoundInterestRouteHandler = new Handler(handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return new CompoundInterestPage();
 });
 
 //var demoFunctionHandler = new Handler(

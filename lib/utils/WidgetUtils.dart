@@ -34,4 +34,8 @@ class WidgetUtils {
       throw 'Could not launch $url';
     }
   }
+
+  static void dismissKeyboard(BuildContext context){
+    FocusScope.of(context).requestFocus(new FocusNode());
+  }
 }

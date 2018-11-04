@@ -8,6 +8,7 @@ class Routes {
   static String searchBank = "/search";
   static String bankDetails = "/bankDetails";
   static String currencyConverter = "/currencyConverter";
+  static String compoundInterest = "/compoundInterest";
   static String demoFunc = "/demo/func";
 
   static void configureRoutes(Router router) {
@@ -18,5 +19,6 @@ class Routes {
     router.define(searchBank, handler: searchBankRouteHandler);
     router.define(bankDetails, handler: bankDetailsRouteHandler);
     router.define(currencyConverter, handler: currencyConverterRouteHandler);
+    router.define(compoundInterest, handler: compoundInterestRouteHandler);
   }
 }
