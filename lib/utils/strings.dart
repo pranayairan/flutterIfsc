@@ -39,6 +39,7 @@ const String currencyConverterExchangeRate = "Exchange Rate:";
 const String currencyConverterValue = "Value:";
 const String currencyConverter = "";
 
+const String emiConverterTitle = "EMI Converter";
 
 const String compoundInterestTitle = "Compound Interest";
 const String compoundInterestPrincipalAmt = "Principal Amount";

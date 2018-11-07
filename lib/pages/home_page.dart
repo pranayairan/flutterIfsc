@@ -139,7 +139,10 @@ class _HomePageState extends State<HomePage> {
           ListTile(
             leading: Image.asset(IC_EMI, width: 28.0, height: 28.0),
             title: Text(drawerEMICalc),
-            onTap: () {},
+            onTap: () {
+              Application.router.pop(context);
+              Application.router.navigateTo(context, Routes.emi);
+            },
             dense: true,
           ),
           Divider(),
