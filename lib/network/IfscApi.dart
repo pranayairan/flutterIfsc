@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:bank_ifsc_flutter/config/application.dart';
+import 'package:bank_ifsc_flutter/network/model/bank_care_data.dart';
 import 'package:bank_ifsc_flutter/network/model/response_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_logger/http_logger.dart';
@@ -11,7 +12,7 @@ import 'package:logging/logging.dart';
 import 'model/bank_data.dart';
 
 class IfscAPI {
-  String _baseIFSCUrl = "http://10.0.2.2:8080/BankIFSCLocator";
+  String _baseIFSCUrl = "https://apps.dexterapps.in/BankIFSCLocator";
 
   final Logger logger = Logger("IfscAPI");
 
@@ -62,6 +63,26 @@ class IfscAPI {
     }
   }
 
+  /// Method to get customer care info
+  Future<ResponseModel<List<BankCareData>>> getCustomerCareInfo() async {
+    String url = "$_baseIFSCUrl/bank_info.json";
+
+    if (Application.bankCareData != null && Application.bankCareData.isNotEmpty) {
+      return ResponseModel(errorCode: 200, data: Application.bankCareData, errorMessage: null);
+    } else {
+      http.Response response = await httpClient.get(url, headers: headers);
+
+      if (response.statusCode == 200) {
+        List<BankCareData> data = _parseCareResult(response.body);
+        Application.bankCareData = data;
+        return ResponseModel(errorCode: response.statusCode, data: data, errorMessage: null);
+      } else {
+        logger.severe("Unable to load customer care info, $response");
+        return ResponseModel(errorCode: response.statusCode, errorMessage: "load customer care info", data: null);
+      }
+    }
+  }
+
   /// Method to parse the bank result json from server
   List<BankData> _parseResult(String responseBody) {
     List<BankData> bankList = List();
@@ -89,6 +110,37 @@ class IfscAPI {
               contact: bankMap["CONTACT"],
               district: bankMap["DISTRICT"],
               rtgs: bankMap["RTGS"]);
+
+          bankList.add(bankData);
+        });
+      }
+    } catch (e) {
+      logger.severe(e);
+    }
+
+    return bankList;
+  }
+
+  /// Method to parse the bank care result json from server
+  List<BankCareData> _parseCareResult(String responseBody) {
+    List<BankCareData> bankList = List();
+    try {
+      final Map<String, dynamic> data = json.decode(responseBody);
+      final List<Map<String, dynamic>> bankCareData = List.from(data["bank"]);
+
+      if (bankCareData != null && bankCareData.isNotEmpty) {
+        bankCareData.forEach((bankMap) {
+          BankCareData bankData = BankCareData(
+              bankName: bankMap["bank_name"],
+              bankBalanceNum: bankMap["bank_balance_num"],
+              miniStatementNum: bankMap["mini_state_num"],
+              customerCareNum: bankMap["customer_num"],
+              officialWebsite: bankMap["official_website"],
+              personalWebsite: bankMap["personal_website"],
+              ussdNum: bankMap["ussd_num"],
+              shortName: bankMap["short_name"],
+              mini: bankMap["mini"],
+              inquiry: bankMap["inquiry"]);
 
           bankList.add(bankData);
         });

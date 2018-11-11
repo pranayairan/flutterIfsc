@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                               style: TextStyle(color: Colors.white),
                             ),
                             color: Colors.black,
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -111,18 +111,42 @@ class _HomePageState extends State<HomePage> {
             child: Image.asset(Slider_Image),
           ),
           ListTile(
-            leading: Image.asset(IC_search, width: 28.0, height: 28.0),
-            title: Text(drawerFindIFSC),
+            leading: Image.asset(IC_ATM, width: 28.0, height: 28.0),
+            title: Text(drawerBalanceCheck),
             onTap: () {
-              Application.router.navigateTo(context, Routes.root);
+              Application.router.pop(context);
+              Application.router.navigateTo(context, Routes.balanceCheck);
             },
             dense: true,
           ),
           Divider(),
           ListTile(
-            leading: Image.asset(IC_ATM, width: 28.0, height: 28.0),
-            title: Text(drawerBalanceCheck),
-            onTap: () {},
+            leading: Image.asset(IC_Customer, width: 28.0, height: 28.0),
+            title: Text(drawerCustomerCare),
+            onTap: () {
+              Application.router.pop(context);
+              Application.router.navigateTo(context, Routes.customerCare);
+            },
+            dense: true,
+          ),
+          Divider(),
+          ListTile(
+            leading: Image.asset(IC_search, width: 28.0, height: 28.0),
+            title: Text(drawerFindATM),
+            onTap: () {
+              Application.router.pop(context);
+              Application.router.navigateTo(context, Routes.findAtm);
+            },
+            dense: true,
+          ),
+          Divider(),
+          ListTile(
+            leading: Image.asset(IC_Branch, width: 28.0, height: 28.0),
+            title: Text(drawerFindBranch),
+            onTap: () {
+              Application.router.pop(context);
+              Application.router.navigateTo(context, Routes.findBranch);
+            },
             dense: true,
           ),
           Divider(),
@@ -153,13 +177,6 @@ class _HomePageState extends State<HomePage> {
               Application.router.pop(context);
               Application.router.navigateTo(context, Routes.compoundInterest);
             },
-            dense: true,
-          ),
-          Divider(),
-          ListTile(
-            leading: Image.asset(IC_Customer, width: 28.0, height: 28.0),
-            title: Text(drawerCustomerCare),
-            onTap: () {},
             dense: true,
           )
         ],

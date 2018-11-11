@@ -11,6 +11,8 @@ const String drawerCurrencyConverter = "Currency Converter";
 const String drawerEMICalc = "EMI Calculator";
 const String drawerCompoundInt = "Compound Interest";
 const String drawerCustomerCare = "Bank Customer Care";
+const String drawerFindATM = "Find ATM";
+const String drawerFindBranch = "Find Branch";
 
 const String bankSearch = "Search";
 const String bankSearchRequiredField = "Please enter Bank Name, City and State or Search by IFSC";
@@ -40,6 +42,16 @@ const String currencyConverterValue = "Value:";
 const String currencyConverter = "";
 
 const String emiConverterTitle = "EMI Converter";
+const String emiConverterLoanTenure = "Loan Tenure";
+const String emiConverterYears = "Years";
+const String emiConverterMonths = "Months";
+const String emiConverterTotalInterest = "Total Interest";
+const String emiConverterTotalAmount = "Total Amount";
+const String emiConverterEMIMonth = "EMI/month";
+const String emiConverterPrincipal = "Principal";
+const String emiConverterInterest = "Interest";
+const String emiConverterBalance = "Balance";
+const String emiConverter = "";
 
 const String compoundInterestTitle = "Compound Interest";
 const String compoundInterestPrincipalAmt = "Principal Amount";

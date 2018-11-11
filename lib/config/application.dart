@@ -1,9 +1,12 @@
+import 'package:bank_ifsc_flutter/network/model/bank_care_data.dart';
 import 'package:fluro/fluro.dart';
 import 'package:logging/logging.dart';
 
 class Application {
   // static reference of routes
   static Router router;
+
+  static List<BankCareData> bankCareData;
 
   static bool get isInDebugMode {
     bool inDebugMode = false;

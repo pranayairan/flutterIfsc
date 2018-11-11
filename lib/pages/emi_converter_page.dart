@@ -72,7 +72,7 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
               keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
             ),
             SizedBox(height: 16.0),
-            Text("Loan Tenure", style: UiUtils.getTextStyleForSubHeaders()),
+            Text(emiConverterLoanTenure, style: UiUtils.getTextStyleForSubHeaders()),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -82,7 +82,7 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
                     keyboardType: TextInputType.numberWithOptions(signed: false, decimal: false),
                   ),
                 ),
-                Text("Years", style: UiUtils.getTextStyleForSecondaryText()),
+                Text(emiConverterYears, style: UiUtils.getTextStyleForSecondaryText()),
                 SizedBox(width: 32.0),
                 Expanded(
                   child: TextField(
@@ -90,7 +90,7 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
                     keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
                   ),
                 ),
-                Text("Months", style: UiUtils.getTextStyleForSecondaryText()),
+                Text(emiConverterMonths, style: UiUtils.getTextStyleForSecondaryText()),
               ],
             ),
             SizedBox(height: 16.0),
@@ -146,14 +146,14 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  _getResultColumn("${totalInterest.ceil()} ₹", "Total Interest"),
-                  _getResultColumn("${totalAmount.ceil()} ₹", "Total Amount"),
+                  _getResultColumn("${totalInterest.ceil()} ₹", emiConverterTotalInterest),
+                  _getResultColumn("${totalAmount.ceil()} ₹", emiConverterTotalAmount),
                 ],
               ),
               SizedBox(height: 32.0),
               Column(
                 children: <Widget>[
-                  Text("EMI/month", style: UiUtils.getTextStyleForSubHeaders()),
+                  Text(emiConverterEMIMonth, style: UiUtils.getTextStyleForSubHeaders()),
                   SizedBox(height: 8.0),
                   Text("${emi.ceil()} ₹", style: UiUtils.getTextStyleForHeaders()),
                 ],
@@ -175,7 +175,8 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
   List<Widget> _getEmiBreakDown(BuildContext context) {
     List<Widget> widgets = List();
     if (paymentList.isNotEmpty) {
-      widgets.add(_getRowContent("Months", "Principal", "Interest", "Balance", true));
+      widgets.add(
+          _getRowContent(emiConverterMonths, emiConverterPrincipal, emiConverterInterest, emiConverterBalance, true));
       paymentList.forEach((EmiModel emiModel) {
         widgets.add(Padding(
           padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
@@ -262,7 +263,7 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
       emiPaymentDetails.paymentYear = (currentYear + (i / 12)).toInt();
       emiPaymentDetails.paymentMonth = i % 12;
       emiPaymentDetails.displayMonthYear =
-          "${_getMonthText(emiPaymentDetails.paymentMonth)},${emiPaymentDetails.paymentYear.toInt()}";
+          "${_getMonthText(emiPaymentDetails.paymentMonth)}, ${emiPaymentDetails.paymentYear.toInt()}";
 
       double interestAmount = loanValue * (rate / 12 / 100);
       emiPaymentDetails.interestAmount = interestAmount;

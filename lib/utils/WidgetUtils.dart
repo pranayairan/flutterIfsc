@@ -16,7 +16,7 @@ class WidgetUtils {
 
       return GestureDetector(
         onTap: () {
-          _launchMapURL(address);
+          launchMapURL(address);
         },
         child: Image.network(_staticMapUri.toString()),
       );
@@ -25,9 +25,26 @@ class WidgetUtils {
     return Container();
   }
 
-  static _launchMapURL(String address) async {
+  static launchMapURL(String address) async {
     Uri googleMapUrl = Uri.https("google.com", "/maps/search/", {"api": "1", "query": "$address"});
     String url = googleMapUrl.toString();
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  static launchPhoneNumber(String phoneNumber) async {
+    String url = "tel:$phoneNumber";
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  static launchUrl(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
