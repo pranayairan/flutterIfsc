@@ -7,7 +7,7 @@ description: Find your bank ifsc code on ios and android
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 1.0.0+1
+version: 2.0.0+24
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
@@ -30,7 +30,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.6.1"
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/ic_launcher.png"
+  adaptive_icon_background: "#FFFAFAFA"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
