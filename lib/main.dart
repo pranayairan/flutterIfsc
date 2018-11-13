@@ -1,6 +1,6 @@
 import 'package:bank_ifsc_flutter/config/application.dart';
 import 'package:bank_ifsc_flutter/config/routes.dart';
-import 'package:bank_ifsc_flutter/pages/home_page.dart';
+import 'package:bank_ifsc_flutter/screens/home_page.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:fluro/fluro.dart';

@@ -17,19 +17,20 @@ class Routes {
   static String findBranch = "/findBranch";
 
   static void configureRoutes(Router router) {
+    RouteHandler routeHandler = RouteHandler();
     router.notFoundHandler = new Handler(handlerFunc: (BuildContext context, Map<String, List<String>> params) {
       print("ROUTE WAS NOT FOUND !!!");
     });
-    router.define(root, handler: rootHandler);
-    router.define(balanceCheck, handler: bankBalanceCheckPageRouteHandler);
-    router.define(customerCare, handler: bankCustomerCareRouteHandler);
-    router.define(searchBank, handler: searchBankRouteHandler);
-    router.define(bankDetails, handler: bankDetailsRouteHandler);
-    router.define(currencyConverter, handler: currencyConverterRouteHandler);
-    router.define(compoundInterest, handler: compoundInterestRouteHandler);
-    router.define(emi, handler: emiRouteHandler);
-    router.define(findAtm, handler: atmRouteHandler);
-    router.define(findBranch, handler: branchRouteHandler);
-    router.define(balanceCheckDetail, handler: bankBalanceDetailPageRouteHandler);
+    router.define(root, handler: routeHandler.rootHandler);
+    router.define(balanceCheck, handler: routeHandler.bankBalanceCheckPageRouteHandler);
+    router.define(customerCare, handler: routeHandler.bankCustomerCareRouteHandler);
+    router.define(searchBank, handler: routeHandler.searchBankRouteHandler);
+    router.define(bankDetails, handler: routeHandler.bankDetailsRouteHandler);
+    router.define(currencyConverter, handler: routeHandler.currencyConverterRouteHandler);
+    router.define(compoundInterest, handler: routeHandler.compoundInterestRouteHandler);
+    router.define(emi, handler: routeHandler.emiRouteHandler);
+    router.define(findAtm, handler: routeHandler.atmRouteHandler);
+    router.define(findBranch, handler: routeHandler.branchRouteHandler);
+    router.define(balanceCheckDetail, handler: routeHandler.bankBalanceDetailPageRouteHandler);
   }
 }
