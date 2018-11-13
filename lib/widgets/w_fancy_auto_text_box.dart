@@ -6,11 +6,10 @@ class FancyAutoCompleteTextField extends StatefulWidget {
   final List<String> suggestions;
   final String hintText;
   final String fancyImage;
-  final GlobalKey<AutoCompleteTextFieldState<String>> key;
 
   String textValue;
 
-  FancyAutoCompleteTextField(this.suggestions, this.hintText, this.fancyImage, this.key);
+  FancyAutoCompleteTextField(this.suggestions, this.hintText, this.fancyImage);
 
   @override
   State<StatefulWidget> createState() {
