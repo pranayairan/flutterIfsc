@@ -1,6 +1,8 @@
 import 'package:bank_ifsc_flutter/config/application.dart';
 import 'package:bank_ifsc_flutter/config/routes.dart';
 import 'package:bank_ifsc_flutter/pages/home_page.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -11,6 +13,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  static FirebaseAnalytics analytics = FirebaseAnalytics();
+  static FirebaseAnalyticsObserver observer = FirebaseAnalyticsObserver(analytics: analytics);
+
   MyApp() {
     final router = new Router();
     Routes.configureRoutes(router);
@@ -29,6 +34,7 @@ class MyApp extends StatelessWidget {
         cursorColor: Colors.black54,
       ),
       home: new HomePage(),
+      navigatorObservers: <NavigatorObserver>[observer],
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Application.router.generator,
     );
