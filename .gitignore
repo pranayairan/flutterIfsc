@@ -37,6 +37,7 @@ build/
 **/android/local.properties
 **/android/**/GeneratedPluginRegistrant.java
 **/android/key.properties
+**/android/google-services.json
 
 # iOS/XCode related
 **/ios/**/*.mode1v3
