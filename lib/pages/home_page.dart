@@ -1,4 +1,3 @@
-import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 import 'package:bank_ifsc_flutter/config/application.dart';
 import 'package:bank_ifsc_flutter/config/routes.dart';
 import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
@@ -34,10 +33,8 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
-
     FancyTextField bankCityTextField = FancyTextField(bankCityController, bankCityEditBoxHint, Bank_CITY_Image);
     FancyTextField bankBranchTextField = FancyTextField(bankBranchController, bankBranchEditBoxHint, Bank_BRANCH_Image);
     FancyTextField bankIFSCTextField = FancyTextField(bankIFSCController, bankIfscEditBoxHint, Bank_Name_Image);

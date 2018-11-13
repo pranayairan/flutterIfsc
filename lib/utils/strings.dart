@@ -69,6 +69,16 @@ const String compoundInterestTotalPrincipal = "Total Principal";
 const String compoundInterestInterestAmount = "Interest Amount";
 const String compoundInterestMaturityValue = "Maturity Value";
 
+
+const String balanceCheckBankBalance = "Bank Balance";
+const String balanceCheckMiniStatement= "Mini Statement";
+const String balanceCheckCustomerCare = "Customer Care";
+const String balanceCheckBankBalanceCheck = "Bank Balance Check";
+
+
+const String bankCustomerCare= "Bank Customer Care";
+
 // common strings
 const String OR = "OR";
 const String networkError = "Error getting the data, please try again";
+const String noBankFound= "No Banks Found";

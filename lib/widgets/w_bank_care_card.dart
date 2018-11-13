@@ -1,5 +1,4 @@
 import 'package:bank_ifsc_flutter/network/model/bank_care_data.dart';
-import 'package:bank_ifsc_flutter/utils/UiUtils.dart';
 import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
 import 'package:flutter/material.dart';
 
@@ -30,9 +29,9 @@ class BankCareCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(bankData.bankName, style: UiUtils.getTextStyleForListSubTitle()),
+                      Text(bankData.bankName, style: Theme.of(context).textTheme.subhead),
                       SizedBox(height: 8.0),
-                      Text(bankData.customerCareNum, style: UiUtils.getTextStyleForListSubTitle(isBold: true)),
+                      Text(bankData.customerCareNum, style: Theme.of(context).textTheme.subhead),
                     ],
                   ),
                 ),

@@ -1,7 +1,6 @@
 import 'package:bank_ifsc_flutter/network/OtherApi.dart';
 import 'package:bank_ifsc_flutter/network/model/response_model.dart';
 import 'package:bank_ifsc_flutter/utils/CommonUtils.dart';
-import 'package:bank_ifsc_flutter/utils/UiUtils.dart';
 import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
 import 'package:bank_ifsc_flutter/utils/strings.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +40,7 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
                         children: <Widget>[
                           Text(
                             currencyConverterFrom,
-                            style: UiUtils.getTextStyleForListSubTitle(isBold: true),
+                            style: Theme.of(context).textTheme.subhead,
                           ),
                           _getDropDownWidget(
                             CommonUtils.currencyName,
@@ -58,7 +57,7 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
                         children: <Widget>[
                           Text(
                             currencyConverterTo,
-                            style: UiUtils.getTextStyleForListSubTitle(isBold: true),
+                            style: Theme.of(context).textTheme.subhead,
                           ),
                           _getDropDownWidget(
                             CommonUtils.currencyName,
@@ -75,7 +74,7 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
                         children: <Widget>[
                           Text(
                             currencyConverterAmount,
-                            style: UiUtils.getTextStyleForListSubTitle(isBold: true),
+                            style: Theme.of(context).textTheme.subhead,
                           ),
                           SizedBox(width: 60.0),
                           Flexible(
@@ -108,11 +107,11 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
                             children: <Widget>[
                               Text(
                                 currencyConverterExchangeRate,
-                                style: UiUtils.getTextStyleForListSubTitle(isBold: true),
+                                style: Theme.of(context).textTheme.subhead,
                               ),
                               Text(
                                 "${exchangeRate.toStringAsFixed(2)}",
-                                style: UiUtils.getTextStyleForListSubTitle(isBold: false),
+                                style: Theme.of(context).textTheme.subhead,
                               )
                             ],
                           ),
@@ -122,11 +121,11 @@ class _CurrencyConverterPageState extends State<CurrencyConverterPage> {
                             children: <Widget>[
                               Text(
                                 currencyConverterValue,
-                                style: UiUtils.getTextStyleForListSubTitle(isBold: true),
+                                style: Theme.of(context).textTheme.subhead,
                               ),
                               Text(
                                 "${(double.parse(textEditingController.text) * exchangeRate).toStringAsFixed(2)}",
-                                style: UiUtils.getTextStyleForListSubTitle(isBold: false),
+                                style: Theme.of(context).textTheme.subhead,
                               )
                             ],
                           ),

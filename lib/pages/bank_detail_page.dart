@@ -51,7 +51,7 @@ class _BankDetailsPageState extends State<BankDetailsPage> {
                 padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                 child: Text(
                   (localBankData.bank).trim(),
-                  style: UiUtils.getTextStyleForHeaders(),
+                  style: Theme.of(context).textTheme.headline,
                 ),
               ),
               SizedBox(height: 8.0),
@@ -67,7 +67,7 @@ class _BankDetailsPageState extends State<BankDetailsPage> {
                   children: <Widget>[
                     Text(bankDetailsIfscCode, style: UiUtils.getTextStyleForSecondaryText()),
                     SizedBox(width: 8.0),
-                    Text(localBankData.ifsc, style: UiUtils.getTextStyleForListHeadersSecondary()),
+                    Text(localBankData.ifsc, style: UiUtils.getTextStyleForListHeadersSecondary(context)),
                   ],
                 ),
               ),
@@ -79,7 +79,7 @@ class _BankDetailsPageState extends State<BankDetailsPage> {
                     Text(bankDetailsContact, style: UiUtils.getTextStyleForSecondaryText()),
                     SizedBox(width: 8.0),
                     Text(localBankData.contact != "null" ? localBankData.contact : "NA",
-                        style: UiUtils.getTextStyleForListHeadersSecondary()),
+                        style: UiUtils.getTextStyleForListHeadersSecondary(context)),
                   ],
                 ),
               ),
@@ -90,10 +90,10 @@ class _BankDetailsPageState extends State<BankDetailsPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      InkWell(
-                        child: _getImageAndTextWidget(Save_Image, bankDetailsSave),
-                      ),
-                      VerticalDivider(),
+//                      InkWell(
+//                        child: _getImageAndTextWidget(Save_Image, bankDetailsSave),
+//                      ),
+//                      VerticalDivider(),
                       InkWell(
                         child: _getImageAndTextWidget(Save_Sms, bankDetailsSms),
                         onTap: () {
@@ -129,7 +129,7 @@ class _BankDetailsPageState extends State<BankDetailsPage> {
                     children: <Widget>[
                       Row(
                         children: <Widget>[
-                          Text(bankDetailsAddress, style: UiUtils.getSmallTextStyleForListSubTitle()),
+                          Text(bankDetailsAddress, style: Theme.of(context).textTheme.body2),
                           SizedBox(width: 16.0),
                           Flexible(child: Text(localBankData.address, style: UiUtils.getTextStyleForSecondaryText())),
                         ],
@@ -137,7 +137,7 @@ class _BankDetailsPageState extends State<BankDetailsPage> {
                       SizedBox(height: 16.0),
                       Row(
                         children: <Widget>[
-                          Text(bankDetailsDistrict, style: UiUtils.getSmallTextStyleForListSubTitle()),
+                          Text(bankDetailsDistrict, style: Theme.of(context).textTheme.body2),
                           SizedBox(width: 22.0),
                           Text(localBankData.district, style: UiUtils.getTextStyleForSecondaryText()),
                         ],
@@ -145,7 +145,7 @@ class _BankDetailsPageState extends State<BankDetailsPage> {
                       SizedBox(height: 16.0),
                       Row(
                         children: <Widget>[
-                          Text(bankDetailsState, style: UiUtils.getSmallTextStyleForListSubTitle()),
+                          Text(bankDetailsState, style: Theme.of(context).textTheme.body2),
                           SizedBox(width: 36.0),
                           Text(localBankData.state, style: UiUtils.getTextStyleForSecondaryText()),
                         ],
@@ -162,10 +162,9 @@ class _BankDetailsPageState extends State<BankDetailsPage> {
   }
 
   void _share() {
-    //TODO branch link
     String textToSend =
         "Bank : ${localBankData.bank}\n\nBranch: ${localBankData.branch}\n\nIFSC CODE: ${localBankData.ifsc}\n\nAddress: ${localBankData.address}"
-        "\n\nBranch Phone: ${localBankData.contact != "null" ? localBankData.contact : "NA"}. \n\nFind IFSC of 1,80,000 banks with Bank IFSC EMI ATM Branch Finder App, Download now https://goo.gl/d6zKSw";
+        "\n\nBranch Phone: ${localBankData.contact != "null" ? localBankData.contact : "NA"}. \n\nFind IFSC and Check Balance with IFSC Balance finder, Download now https://kzun.app.link/bankIfsc";
 
     Share.share(textToSend);
   }

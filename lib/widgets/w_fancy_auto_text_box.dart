@@ -2,6 +2,7 @@ import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 import 'package:bank_ifsc_flutter/utils/styles.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class FancyAutoCompleteTextField extends StatefulWidget {
   final List<String> suggestions;
   final String hintText;

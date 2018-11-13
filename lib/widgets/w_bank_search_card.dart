@@ -1,7 +1,6 @@
 import 'package:bank_ifsc_flutter/config/application.dart';
 import 'package:bank_ifsc_flutter/config/routes.dart';
 import 'package:bank_ifsc_flutter/network/model/bank_data.dart';
-import 'package:bank_ifsc_flutter/utils/UiUtils.dart';
 import 'package:bank_ifsc_flutter/utils/strings.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +38,7 @@ class BankSearchCard extends StatelessWidget {
                   ),
                   Text(
                     bankData.address,
-                    style: UiUtils.getSmallTextStyleForListSubTitle(),
+                    style: Theme.of(context).textTheme.body1,
                   ),
                   SizedBox(
                     height: 8.0,
@@ -49,11 +48,11 @@ class BankSearchCard extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         bankData.ifsc,
-                        style: UiUtils.getTextStyleForListHeaders(true),
+                        style: Theme.of(context).textTheme.subhead,
                       ),
                       Text(
                         bankMoreDetails,
-                        style: UiUtils.getTextStyleForListSubTitle(),
+                        style: Theme.of(context).textTheme.subhead,
                       ),
                     ],
                   ),

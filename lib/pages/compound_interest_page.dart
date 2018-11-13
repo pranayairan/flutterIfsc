@@ -48,28 +48,28 @@ class _CompoundInterestPageState extends State<CompoundInterestPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Text(compoundInterestPrincipalAmt, style: UiUtils.getTextStyleForSubHeaders()),
+            Text(compoundInterestPrincipalAmt, style: Theme.of(context).textTheme.title),
             TextField(
               controller: tecAmount,
               decoration: InputDecoration(hintText: compoundInterestPrincipalAmtEx),
               keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
             ),
             SizedBox(height: 16.0),
-            Text(compoundInterestAnnualInt, style: UiUtils.getTextStyleForSubHeaders()),
+            Text(compoundInterestAnnualInt, style: Theme.of(context).textTheme.title),
             TextField(
               controller: tecInterest,
               decoration: InputDecoration(hintText: compoundInterestAnnualIntEx),
               keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
             ),
             SizedBox(height: 16.0),
-            Text(compoundInterestPeriod, style: UiUtils.getTextStyleForSubHeaders()),
+            Text(compoundInterestPeriod, style: Theme.of(context).textTheme.title),
             TextField(
               controller: tecPeriod,
               decoration: InputDecoration(hintText: compoundInterestPeriodEx),
               keyboardType: TextInputType.numberWithOptions(signed: false, decimal: false),
             ),
             SizedBox(height: 16.0),
-            Text(compoundInterestMonthlyDep, style: UiUtils.getTextStyleForSubHeaders()),
+            Text(compoundInterestMonthlyDep, style: Theme.of(context).textTheme.title),
             TextField(
               controller: tecMonthlyDep,
               decoration: InputDecoration(hintText: compoundInterestMonthlyDepEx),
@@ -81,7 +81,7 @@ class _CompoundInterestPageState extends State<CompoundInterestPage> {
               children: <Widget>[
                 Text(
                   compoundInterestCompounded,
-                  style: UiUtils.getTextStyleForListSubTitle(isBold: true),
+                  style: Theme.of(context).textTheme.subhead,
                 ),
                 SizedBox(width: 32.0),
                 _getDropDownWidget((String data) {
@@ -166,9 +166,9 @@ class _CompoundInterestPageState extends State<CompoundInterestPage> {
               SizedBox(height: 32.0),
               Column(
                 children: <Widget>[
-                  Text(compoundInterestMaturityValue, style: UiUtils.getTextStyleForSubHeaders()),
+                  Text(compoundInterestMaturityValue, style: Theme.of(context).textTheme.title),
                   SizedBox(height: 8.0),
-                  Text("${matuarityValue.toStringAsFixed(2)} ₹", style: UiUtils.getTextStyleForHeaders()),
+                  Text("${matuarityValue.toStringAsFixed(2)} ₹", style: Theme.of(context).textTheme.headline),
                 ],
               )
             ],
@@ -179,7 +179,7 @@ class _CompoundInterestPageState extends State<CompoundInterestPage> {
   Widget _getResultColumn(String data, String subLabel) {
     return Column(
       children: <Widget>[
-        Text(data, style: UiUtils.getTextStyleForHeaders()),
+        Text(data, style: Theme.of(context).textTheme.headline),
         Text(subLabel, style: UiUtils.getTextStyleForSecondaryText()),
       ],
     );

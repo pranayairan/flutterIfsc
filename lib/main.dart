@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
         cursorColor: Colors.black54,
       ),
       home: new HomePage(),
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: Application.router.generator,
     );
   }

@@ -1,7 +1,6 @@
 import 'dart:math' as Math;
 
 import 'package:bank_ifsc_flutter/network/model/emi_model.dart';
-import 'package:bank_ifsc_flutter/utils/UiUtils.dart';
 import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
 import 'package:bank_ifsc_flutter/utils/strings.dart';
 import 'package:flutter/material.dart';
@@ -58,21 +57,21 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Text(compoundInterestPrincipalAmt, style: UiUtils.getTextStyleForSubHeaders()),
+            Text(compoundInterestPrincipalAmt, style: Theme.of(context).textTheme.title),
             TextField(
               controller: tecAmount,
               decoration: InputDecoration(hintText: compoundInterestPrincipalAmtEx),
               keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
             ),
             SizedBox(height: 16.0),
-            Text(compoundInterestAnnualInt, style: UiUtils.getTextStyleForSubHeaders()),
+            Text(compoundInterestAnnualInt, style: Theme.of(context).textTheme.title),
             TextField(
               controller: tecInterest,
               decoration: InputDecoration(hintText: compoundInterestAnnualIntEx),
               keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
             ),
             SizedBox(height: 16.0),
-            Text(emiConverterLoanTenure, style: UiUtils.getTextStyleForSubHeaders()),
+            Text(emiConverterLoanTenure, style: Theme.of(context).textTheme.title),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -82,7 +81,7 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
                     keyboardType: TextInputType.numberWithOptions(signed: false, decimal: false),
                   ),
                 ),
-                Text(emiConverterYears, style: UiUtils.getTextStyleForSecondaryText()),
+                Text(emiConverterYears, style: Theme.of(context).textTheme.body1),
                 SizedBox(width: 32.0),
                 Expanded(
                   child: TextField(
@@ -90,7 +89,7 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
                     keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
                   ),
                 ),
-                Text(emiConverterMonths, style: UiUtils.getTextStyleForSecondaryText()),
+                Text(emiConverterMonths, style: Theme.of(context).textTheme.body1),
               ],
             ),
             SizedBox(height: 16.0),
@@ -153,9 +152,9 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
               SizedBox(height: 32.0),
               Column(
                 children: <Widget>[
-                  Text(emiConverterEMIMonth, style: UiUtils.getTextStyleForSubHeaders()),
+                  Text(emiConverterEMIMonth, style: Theme.of(context).textTheme.title),
                   SizedBox(height: 8.0),
-                  Text("${emi.ceil()} ₹", style: UiUtils.getTextStyleForHeaders()),
+                  Text("${emi.ceil()} ₹", style: Theme.of(context).textTheme.headline),
                 ],
               )
             ],
@@ -166,8 +165,8 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
   Widget _getResultColumn(String data, String subLabel) {
     return Column(
       children: <Widget>[
-        Text(data, style: UiUtils.getTextStyleForHeaders()),
-        Text(subLabel, style: UiUtils.getTextStyleForSecondaryText()),
+        Text(data, style: Theme.of(context).textTheme.headline),
+        Text(subLabel, style: Theme.of(context).textTheme.body1),
       ],
     );
   }
@@ -196,17 +195,17 @@ class _EmiConverterPageState extends State<EmiConverterPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         bold
-            ? Text(column1, style: UiUtils.getTextStyleForListSubTitle(isBold: true))
-            : Text(column1, style: UiUtils.getTextStyleForSecondaryText()),
+            ? Text(column1, style: Theme.of(context).textTheme.subhead)
+            : Text(column1, style: Theme.of(context).textTheme.body1),
         bold
-            ? Text(column2, style: UiUtils.getTextStyleForListSubTitle(isBold: true))
-            : Text(column2, style: UiUtils.getTextStyleForSecondaryText()),
+            ? Text(column2, style: Theme.of(context).textTheme.subhead)
+            : Text(column2, style: Theme.of(context).textTheme.body1),
         bold
-            ? Text(column3, style: UiUtils.getTextStyleForListSubTitle(isBold: true))
-            : Text(column3, style: UiUtils.getTextStyleForSecondaryText()),
+            ? Text(column3, style: Theme.of(context).textTheme.subhead)
+            : Text(column3, style: Theme.of(context).textTheme.body1),
         bold
-            ? Text(column4, style: UiUtils.getTextStyleForListSubTitle(isBold: true))
-            : Text(column4, style: UiUtils.getTextStyleForSecondaryText())
+            ? Text(column4, style: Theme.of(context).textTheme.subhead)
+            : Text(column4, style: Theme.of(context).textTheme.body1)
       ],
     );
   }

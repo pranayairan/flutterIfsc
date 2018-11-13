@@ -1,7 +1,6 @@
 import 'package:bank_ifsc_flutter/config/application.dart';
 import 'package:bank_ifsc_flutter/config/routes.dart';
 import 'package:bank_ifsc_flutter/network/model/bank_care_data.dart';
-import 'package:bank_ifsc_flutter/utils/UiUtils.dart';
 import 'package:flutter/material.dart';
 
 import 'CircularImageView.dart';
@@ -42,11 +41,11 @@ class BankCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(bankData.bankName, style: UiUtils.getTextStyleForListSubTitle()),
+                      Text(bankData.bankName, style: Theme.of(context).textTheme.subhead),
                       SizedBox(height: 8.0),
                       Text(
                         bankData.officialWebsite,
-                        style: UiUtils.getSmallTextStyleForListSubTitle(),
+                        style: Theme.of(context).textTheme.body1,
                         maxLines: 1,
                       ),
                     ],

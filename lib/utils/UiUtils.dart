@@ -3,36 +3,12 @@ import 'package:flutter/material.dart';
 import 'styles.dart';
 
 class UiUtils {
-  static TextStyle getTextStyleForHeaders() {
-    return TextStyle(fontSize: Font_Size_Page_title);
-  }
-
-  static TextStyle getTextStyleForSubHeaders() {
-    return TextStyle(fontSize: 18.0);
-  }
-
-  static TextStyle getTextStyleForListHeaders(bool isBold) {
-    return isBold
-        ? TextStyle(fontSize: Font_Size_List_Items, fontWeight: FontWeight.bold)
-        : TextStyle(fontSize: Font_Size_List_Items);
-  }
-
-  static TextStyle getTextStyleForListHeadersSecondary() {
+  static TextStyle getTextStyleForListHeadersSecondary(BuildContext context) {
     return TextStyle(fontSize: Font_Size_List_Items, color: Colors.redAccent, fontWeight: FontWeight.bold);
   }
 
-  static TextStyle getTextStyleForListSubTitle({bool isBold = false}) {
-    return isBold
-        ? TextStyle(fontSize: Font_Size_List_Title, fontWeight: FontWeight.bold)
-        : TextStyle(fontSize: Font_Size_List_Title);
-  }
-
-  static TextStyle getSmallTextStyleForListSubTitle() {
-    return TextStyle(fontSize: 15.0);
-  }
-
   static TextStyle getTextStyleForSecondaryText() {
-    return TextStyle(fontSize: 15.0, color: Colors.black54);
+    return TextStyle(fontSize: 16.0, color: Colors.black54);
   }
 }
 

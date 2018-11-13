@@ -26,7 +26,7 @@ class _BankCustomerCarePageStage extends State<BankCustomerCarePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bank Customer Care"),
+        title: Text(bankCustomerCare),
       ),
       body: _getBody(responseModel),
     );
@@ -41,7 +41,7 @@ class _BankCustomerCarePageStage extends State<BankCustomerCarePage> {
   }
 
   Widget _getBody(ResponseModel<List<BankCareData>> responseModel) {
-    Widget container = Center(child: Text("No Banks Found"));
+    Widget container = Center(child: Text(noBankFound));
     if (responseModel == null) {
       container = Center(child: CircularProgressIndicator());
     } else if (responseModel.errorCode != 200) {

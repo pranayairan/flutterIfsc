@@ -1,4 +1,5 @@
 import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
+import 'package:bank_ifsc_flutter/utils/strings.dart';
 import 'package:bank_ifsc_flutter/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
@@ -98,7 +99,7 @@ class BankBalanceDetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("Bank Balance",
+                  Text(balanceCheckBankBalance,
                       style: TextStyle(fontSize: Font_Size_List_Items, color: Theme.of(context).primaryColor)),
                   SizedBox(height: 24.0),
                   Text("Give a miss call to $bankName for checking balance"),
@@ -121,7 +122,8 @@ class BankBalanceDetailPage extends StatelessWidget {
                       IconButton(
                           icon: Icon(Icons.share, size: 36.0),
                           onPressed: () {
-                            _share("Give a Miss Call to $bankName to get Bank Balance, on this number $bankBalanceNum");
+                            _share(
+                                "Give a Miss Call to $bankName to get Bank Balance, on this number $bankBalanceNum \n\nFind IFSC and Check Balance with IFSC Balance finder, Download now https://kzun.app.link/bankIfsc");
                           })
                     ],
                   ),
@@ -148,7 +150,7 @@ class BankBalanceDetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("Mini Statement",
+                  Text(balanceCheckMiniStatement,
                       style: TextStyle(fontSize: Font_Size_List_Items, color: Theme.of(context).primaryColor)),
                   SizedBox(height: 24.0),
                   Text("Give a miss call to $bankName for check mini statement"),
@@ -172,7 +174,7 @@ class BankBalanceDetailPage extends StatelessWidget {
                           icon: Icon(Icons.share, size: 36.0),
                           onPressed: () {
                             _share(
-                                "Give a Miss Call to $bankName to get mini statement, on this number $miniStatementNum");
+                                "Give a Miss Call to $bankName to get mini statement, on this number $miniStatementNum \n\nFind IFSC and Check Balance with IFSC Balance finder, Download now https://kzun.app.link/bankIfsc");
                           })
                     ],
                   ),
@@ -199,7 +201,7 @@ class BankBalanceDetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("Customer Care",
+                  Text(balanceCheckCustomerCare,
                       style: TextStyle(fontSize: Font_Size_List_Items, color: Theme.of(context).primaryColor)),
                   SizedBox(height: 24.0),
                   Text("Call to $bankName for other request"),
@@ -222,7 +224,8 @@ class BankBalanceDetailPage extends StatelessWidget {
                       IconButton(
                           icon: Icon(Icons.share, size: 36.0),
                           onPressed: () {
-                            _share("$bankName customer care number: $customerCareNum");
+                            _share(
+                                "$bankName customer care number: $customerCareNum \n\nFind IFSC and Check Balance with IFSC Balance finder, Download now https://kzun.app.link/bankIfsc");
                           })
                     ],
                   ),
