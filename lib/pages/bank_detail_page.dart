@@ -116,7 +116,7 @@ class _BankDetailsPageState extends State<BankDetailsPage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                child: WidgetUtils.getMapsImageWidget(localBankData.address),
+                child: WidgetUtils.getMapsImageWidget(localBankData.bank, localBankData.branch, localBankData.address),
               ),
               SizedBox(
                 height: 16.0,

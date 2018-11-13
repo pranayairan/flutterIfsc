@@ -15,3 +15,4 @@ const String IC_Customer = "images/ic_customer_care.png";
 const String IC_EMI = "images/ic_emi_cal.png";
 const String IC_search = "images/ic_search.png";
 const String Slider_Image = "images/slider_header.png";
+const String Maps_placeholder = "images/map_placeholder.jpg";

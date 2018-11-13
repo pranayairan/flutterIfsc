@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.blue,
+        cursorColor: Colors.black54,
       ),
       home: new HomePage(),
       onGenerateRoute: Application.router.generator,

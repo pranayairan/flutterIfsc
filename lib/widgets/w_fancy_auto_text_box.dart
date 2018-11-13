@@ -43,6 +43,9 @@ class _FancyAutoCompleteTextFieldState extends State<FancyAutoCompleteTextField>
         decoration: new InputDecoration(
           hintText: widget.hintText,
           border: InputBorder.none,
+          hintStyle: TextStyle(
+            color: Color(0xFF696969),
+          ),
         ),
         style: TextStyle(
           color: Colors.white,

@@ -1,3 +1,4 @@
+import 'package:bank_ifsc_flutter/utils/images.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -9,17 +10,16 @@ class WidgetUtils {
   }
 
   //TODO change to prod key
-  static Widget getMapsImageWidget(String address) {
+  static Widget getMapsImageWidget(String bankName, String city,String address) {
     if (address != null && address.isNotEmpty) {
-      Uri _staticMapUri = Uri.https("dev.virtualearth.net", "/REST/V1/Imagery/Map/Road/$address",
+      Uri _staticMapUri = Uri.https("dev.virtualearth.net", "/REST/V1/Imagery/Map/Road/$bankName,$city}",
           {"mapSize": "500,300", "format": "png", "zoomLevel": "10", "key": BING_API_KEY});
 
       return GestureDetector(
-        onTap: () {
-          launchMapURL(address);
-        },
-        child: Image.network(_staticMapUri.toString()),
-      );
+          onTap: () {
+            launchMapURL(address);
+          },
+          child: FadeInImage.assetNetwork(placeholder: Maps_placeholder, image: _staticMapUri.toString()));
     }
 
     return Container();
@@ -52,7 +52,7 @@ class WidgetUtils {
     }
   }
 
-  static void dismissKeyboard(BuildContext context){
+  static void dismissKeyboard(BuildContext context) {
     FocusScope.of(context).requestFocus(new FocusNode());
   }
 }

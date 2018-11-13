@@ -51,6 +51,9 @@ class _FancyTextFieldState extends State<FancyTextField> {
       controller: widget.textEditingController,
       decoration: new InputDecoration(
         hintText: widget.hintText,
+        hintStyle: TextStyle(
+          color: Color(0xFF696969),
+        ),
         border: InputBorder.none,
       ),
       key: widget.key,

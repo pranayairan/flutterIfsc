@@ -1,4 +1,3 @@
-import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 import 'package:bank_ifsc_flutter/config/application.dart';
 import 'package:bank_ifsc_flutter/config/routes.dart';
 import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
@@ -8,11 +7,9 @@ import 'package:bank_ifsc_flutter/utils/strings.dart';
 import 'package:bank_ifsc_flutter/widgets/w_fancy_auto_text_box.dart';
 import 'package:bank_ifsc_flutter/widgets/w_fancy_text_box.dart';
 import 'package:flutter/material.dart';
+import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 
 class HomePage extends StatefulWidget {
-  final GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
-  final GlobalKey<AutoCompleteTextFieldState<String>> key2 = GlobalKey();
-
   @override
   State<StatefulWidget> createState() {
     return _HomePageState();
@@ -20,17 +17,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TextEditingController bankCityController = TextEditingController();
-  TextEditingController bankBranchController = TextEditingController();
-  TextEditingController bankIFSCController = TextEditingController();
+  TextEditingController bankCityController;
+  TextEditingController bankBranchController;
+  TextEditingController bankIFSCController;
+
+
+  GlobalKey<AutoCompleteTextFieldState<String>> key;
+
+  GlobalKey<AutoCompleteTextFieldState<String>> key1;
+
+  @override
+  void initState() {
+    bankCityController = TextEditingController();
+    bankBranchController = TextEditingController();
+    bankIFSCController = TextEditingController();
+    key = new GlobalKey();
+    key1 = new GlobalKey();
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     FancyAutoCompleteTextField bankNameTextField =
-        FancyAutoCompleteTextField(Bank_Name_List, bankNameEditBoxHint, Bank_Name_Image, widget.key);
+    FancyAutoCompleteTextField(Bank_Name_List, bankNameEditBoxHint, Bank_Name_Image, key);
 
     FancyAutoCompleteTextField bankStateTextField =
-        FancyAutoCompleteTextField(Bank_state_list, bankStateEditBoxHint, Bank_STATE_Image, widget.key2);
+    FancyAutoCompleteTextField(Bank_state_list, bankStateEditBoxHint, Bank_STATE_Image, key1);
 
     FancyTextField bankCityTextField = FancyTextField(bankCityController, bankCityEditBoxHint, Bank_CITY_Image);
     FancyTextField bankBranchTextField = FancyTextField(bankBranchController, bankBranchEditBoxHint, Bank_BRANCH_Image);
@@ -42,7 +55,8 @@ class _HomePageState extends State<HomePage> {
         ),
         drawer: _buildDrawerWidget(context),
         body: Builder(
-          builder: (context) => Container(
+          builder: (context) =>
+              Container(
                 margin: EdgeInsets.all(12.0),
                 child: Card(
                   child: Container(
