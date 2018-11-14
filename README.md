@@ -1,8 +1,2 @@
-# bank_ifsc_flutter
-
-Find your bank ifsc code on ios and android
-
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+# flutterIfsc
+A Flutter app for finding Bank IFSC code, TollFree number, Bank balance etc. This app is completely done in flutter supporting both android and iOS
