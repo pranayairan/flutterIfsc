@@ -1,7 +1,7 @@
 import 'package:bank_ifsc_flutter/config/application.dart';
 import 'package:bank_ifsc_flutter/config/routes.dart';
-import 'package:bank_ifsc_flutter/network/model/bank_data.dart';
 import 'package:bank_ifsc_flutter/misc/strings.dart';
+import 'package:bank_ifsc_flutter/network/model/bank_data.dart';
 import 'package:flutter/material.dart';
 
 class BankSearchCard extends StatelessWidget {

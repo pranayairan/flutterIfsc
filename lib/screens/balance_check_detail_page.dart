@@ -1,6 +1,6 @@
-import 'package:bank_ifsc_flutter/utils/widget_utils.dart';
 import 'package:bank_ifsc_flutter/misc/strings.dart';
 import 'package:bank_ifsc_flutter/misc/styles.dart';
+import 'package:bank_ifsc_flutter/utils/widget_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 
@@ -89,108 +89,29 @@ class BankBalanceDetailPage extends StatelessWidget {
   }
 
   Widget _getBankBalanceCard(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(balanceCheckBankBalance,
-                      style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).primaryColor)),
-                  SizedBox(height: 24.0),
-                  Text("Give a miss call to $bankName for checking balance"),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      IconButton(
-                          icon: Icon(Icons.call, size: 36.0),
-                          onPressed: () {
-                            WidgetUtils.launchPhoneNumber(bankBalanceNum);
-                          }),
-                      SizedBox(width: 16.0),
-                      IconButton(
-                          icon: Icon(Icons.share, size: 36.0),
-                          onPressed: () {
-                            _share(
-                                "Give a Miss Call to $bankName to get Bank Balance, on this number $bankBalanceNum \n\nFind IFSC and Check Balance with IFSC Balance finder, Download now https://kzun.app.link/bankIfsc");
-                          })
-                    ],
-                  ),
-                  SizedBox(height: 32.0),
-                  Text(bankBalanceNum,
-                      style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).accentColor)),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    return _getSectionCard(
+        context,
+        balanceCheckBankBalance,
+        "Give a miss call to $bankName for checking balance",
+        bankBalanceNum,
+        "Give a Miss Call to $bankName to get Bank Balance, on this number $bankBalanceNum \n\nFind IFSC and Check Balance with IFSC Balance finder, Download now https://kzun.app.link/bankIfsc");
   }
 
   Widget _getMiniStatementCard(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(balanceCheckMiniStatement,
-                      style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).primaryColor)),
-                  SizedBox(height: 24.0),
-                  Text("Give a miss call to $bankName for check mini statement"),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      IconButton(
-                          icon: Icon(Icons.call, size: 36.0),
-                          onPressed: () {
-                            WidgetUtils.launchPhoneNumber(miniStatementNum);
-                          }),
-                      SizedBox(width: 16.0),
-                      IconButton(
-                          icon: Icon(Icons.share, size: 36.0),
-                          onPressed: () {
-                            _share(
-                                "Give a Miss Call to $bankName to get mini statement, on this number $miniStatementNum \n\nFind IFSC and Check Balance with IFSC Balance finder, Download now https://kzun.app.link/bankIfsc");
-                          })
-                    ],
-                  ),
-                  SizedBox(height: 32.0),
-                  Text(miniStatementNum,
-                      style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).accentColor)),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    return _getSectionCard(
+        context,
+        balanceCheckMiniStatement,
+        "Give a miss call to $bankName for check mini statement",
+        miniStatementNum,
+        "Give a Miss Call to $bankName to get mini statement, on this number $miniStatementNum \n\nFind IFSC and Check Balance with IFSC Balance finder, Download now https://kzun.app.link/bankIfsc");
   }
 
   Widget _getCustomerCareCard(BuildContext context) {
+    return _getSectionCard(context, balanceCheckCustomerCare, "Call to $bankName for other request", customerCareNum,
+        "$bankName customer care number: $customerCareNum \n\nFind IFSC and Check Balance with IFSC Balance finder, Download now https://kzun.app.link/bankIfsc");
+  }
+
+  Widget _getSectionCard(BuildContext context, String title, String content, String phoneNumber, String shareContent) {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -201,10 +122,9 @@ class BankBalanceDetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(balanceCheckCustomerCare,
-                      style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).primaryColor)),
+                  Text(title, style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).primaryColor)),
                   SizedBox(height: 24.0),
-                  Text("Call to $bankName for other request"),
+                  Text(content),
                 ],
               ),
             ),
@@ -218,19 +138,18 @@ class BankBalanceDetailPage extends StatelessWidget {
                       IconButton(
                           icon: Icon(Icons.call, size: 36.0),
                           onPressed: () {
-                            WidgetUtils.launchPhoneNumber(customerCareNum);
+                            WidgetUtils.launchPhoneNumber(phoneNumber);
                           }),
                       SizedBox(width: 16.0),
                       IconButton(
                           icon: Icon(Icons.share, size: 36.0),
                           onPressed: () {
-                            _share(
-                                "$bankName customer care number: $customerCareNum \n\nFind IFSC and Check Balance with IFSC Balance finder, Download now https://kzun.app.link/bankIfsc");
+                            _share(shareContent);
                           })
                     ],
                   ),
                   SizedBox(height: 32.0),
-                  Text(customerCareNum,
+                  Text(phoneNumber,
                       style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).accentColor)),
                 ],
               ),
