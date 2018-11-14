@@ -1,11 +1,11 @@
 import 'package:bank_ifsc_flutter/config/application.dart';
 import 'package:bank_ifsc_flutter/config/routes.dart';
-import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
+import 'package:bank_ifsc_flutter/utils/widget_utils.dart';
 import 'package:bank_ifsc_flutter/utils/bank_data.dart';
-import 'package:bank_ifsc_flutter/utils/images.dart';
-import 'package:bank_ifsc_flutter/utils/strings.dart';
-import 'package:bank_ifsc_flutter/widgets/w_fancy_auto_text_box.dart';
-import 'package:bank_ifsc_flutter/widgets/w_fancy_text_box.dart';
+import 'package:bank_ifsc_flutter/misc/images.dart';
+import 'package:bank_ifsc_flutter/misc/strings.dart';
+import 'package:bank_ifsc_flutter/widgets/w_fancy_auto_text_field.dart';
+import 'package:bank_ifsc_flutter/widgets/w_fancy_text_field.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,17 +27,17 @@ class _HomePageState extends State<HomePage> {
     bankCityController = TextEditingController();
     bankBranchController = TextEditingController();
     bankIFSCController = TextEditingController();
-    bankNameTextField = FancyAutoCompleteTextField(Bank_Name_List, bankNameEditBoxHint, Bank_Name_Image);
-    bankStateTextField = FancyAutoCompleteTextField(Bank_state_list, bankStateEditBoxHint, Bank_STATE_Image);
+    bankNameTextField = FancyAutoCompleteTextField(bankNameList, bankNameEditBoxHint, bankNameImage);
+    bankStateTextField = FancyAutoCompleteTextField(Bank_state_list, bankStateEditBoxHint, bankStateImage);
 
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    FancyTextField bankCityTextField = FancyTextField(bankCityController, bankCityEditBoxHint, Bank_CITY_Image);
-    FancyTextField bankBranchTextField = FancyTextField(bankBranchController, bankBranchEditBoxHint, Bank_BRANCH_Image);
-    FancyTextField bankIFSCTextField = FancyTextField(bankIFSCController, bankIfscEditBoxHint, Bank_Name_Image);
+    FancyTextField bankCityTextField = FancyTextField(bankCityController, bankCityEditBoxHint, bankCityImage);
+    FancyTextField bankBranchTextField = FancyTextField(bankBranchController, bankBranchEditBoxHint, bankBranchImage);
+    FancyTextField bankIFSCTextField = FancyTextField(bankIFSCController, bankIfscEditBoxHint, bankNameImage);
 
     return Scaffold(
         appBar: AppBar(
@@ -111,10 +111,10 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         children: <Widget>[
           Container(
-            child: Image.asset(Slider_Image),
+            child: Image.asset(sliderImage),
           ),
           ListTile(
-            leading: Image.asset(IC_ATM, width: 28.0, height: 28.0),
+            leading: Image.asset(icATM, width: 28.0, height: 28.0),
             title: Text(drawerBalanceCheck),
             onTap: () {
               Application.router.pop(context);
@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Divider(),
           ListTile(
-            leading: Image.asset(IC_Customer, width: 28.0, height: 28.0),
+            leading: Image.asset(icCustomer, width: 28.0, height: 28.0),
             title: Text(drawerCustomerCare),
             onTap: () {
               Application.router.pop(context);
@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Divider(),
           ListTile(
-            leading: Image.asset(IC_search, width: 28.0, height: 28.0),
+            leading: Image.asset(icSearch, width: 28.0, height: 28.0),
             title: Text(drawerFindATM),
             onTap: () {
               Application.router.pop(context);
@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Divider(),
           ListTile(
-            leading: Image.asset(IC_Branch, width: 28.0, height: 28.0),
+            leading: Image.asset(icBranch, width: 28.0, height: 28.0),
             title: Text(drawerFindBranch),
             onTap: () {
               Application.router.pop(context);
@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Divider(),
           ListTile(
-            leading: Image.asset(IC_Currency, width: 28.0, height: 28.0),
+            leading: Image.asset(icCurrency, width: 28.0, height: 28.0),
             title: Text(drawerCurrencyConverter),
             onTap: () {
               Application.router.pop(context);
@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Divider(),
           ListTile(
-            leading: Image.asset(IC_EMI, width: 28.0, height: 28.0),
+            leading: Image.asset(icEMI, width: 28.0, height: 28.0),
             title: Text(drawerEMICalc),
             onTap: () {
               Application.router.pop(context);
@@ -174,7 +174,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Divider(),
           ListTile(
-            leading: Image.asset(IC_Compound, width: 28.0, height: 28.0),
+            leading: Image.asset(icCompound, width: 28.0, height: 28.0),
             title: Text(drawerCompoundInt),
             onTap: () {
               Application.router.pop(context);

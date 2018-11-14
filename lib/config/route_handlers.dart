@@ -8,7 +8,7 @@ import 'package:bank_ifsc_flutter/screens/currency_converter_page.dart';
 import 'package:bank_ifsc_flutter/screens/emi_converter_page.dart';
 import 'package:bank_ifsc_flutter/screens/home_page.dart';
 import 'package:bank_ifsc_flutter/screens/search_bank_page.dart';
-import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
+import 'package:bank_ifsc_flutter/utils/widget_utils.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 

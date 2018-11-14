@@ -1,5 +1,5 @@
 import 'package:autocomplete_textfield/autocomplete_textfield.dart';
-import 'package:bank_ifsc_flutter/utils/styles.dart';
+import 'package:bank_ifsc_flutter/misc/styles.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -49,7 +49,7 @@ class _FancyAutoCompleteTextFieldState extends State<FancyAutoCompleteTextField>
         ),
         style: TextStyle(
           color: Colors.white,
-          fontSize: Font_Size_Text_Input,
+          fontSize: fontSizeTextInput,
         ),
         submitOnSuggestionTap: true,
         clearOnSubmit: false,
@@ -70,7 +70,7 @@ class _FancyAutoCompleteTextFieldState extends State<FancyAutoCompleteTextField>
               child: new Text(
                 item,
                 style: TextStyle(
-                  fontSize: Font_Size_List_Title,
+                  fontSize: fontSizeListTitle,
                 ),
               ));
         },

@@ -1,8 +1,8 @@
 import 'dart:math' as Math;
 
 import 'package:bank_ifsc_flutter/network/model/emi_model.dart';
-import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
-import 'package:bank_ifsc_flutter/utils/strings.dart';
+import 'package:bank_ifsc_flutter/utils/widget_utils.dart';
+import 'package:bank_ifsc_flutter/misc/strings.dart';
 import 'package:flutter/material.dart';
 
 class EmiConverterPage extends StatefulWidget {

@@ -1,8 +1,8 @@
 import 'dart:math' as Math;
 
-import 'package:bank_ifsc_flutter/utils/UiUtils.dart';
-import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
-import 'package:bank_ifsc_flutter/utils/strings.dart';
+import 'package:bank_ifsc_flutter/utils/ut_utils.dart';
+import 'package:bank_ifsc_flutter/utils/widget_utils.dart';
+import 'package:bank_ifsc_flutter/misc/strings.dart';
 import 'package:flutter/material.dart';
 
 class CompoundInterestPage extends StatefulWidget {

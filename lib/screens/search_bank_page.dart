@@ -1,8 +1,8 @@
-import 'package:bank_ifsc_flutter/network/IfscApi.dart';
+import 'package:bank_ifsc_flutter/network/ifsc_api.dart';
 import 'package:bank_ifsc_flutter/network/model/bank_data.dart';
 import 'package:bank_ifsc_flutter/network/model/response_model.dart';
-import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
-import 'package:bank_ifsc_flutter/utils/strings.dart';
+import 'package:bank_ifsc_flutter/utils/widget_utils.dart';
+import 'package:bank_ifsc_flutter/misc/strings.dart';
 import 'package:bank_ifsc_flutter/widgets/w_bank_search_card.dart';
 import 'package:flutter/material.dart';
 

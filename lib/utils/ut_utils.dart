@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'styles.dart';
+import 'package:bank_ifsc_flutter/misc/styles.dart';
 
 class UiUtils {
   static TextStyle getTextStyleForListHeadersSecondary(BuildContext context) {
-    return TextStyle(fontSize: Font_Size_List_Items, color: Colors.redAccent, fontWeight: FontWeight.bold);
+    return TextStyle(fontSize: fontSizeListItems, color: Colors.redAccent, fontWeight: FontWeight.bold);
   }
 
   static TextStyle getTextStyleForSecondaryText() {

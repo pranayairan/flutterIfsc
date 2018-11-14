@@ -1,4 +1,4 @@
-import 'package:bank_ifsc_flutter/utils/images.dart';
+import 'package:bank_ifsc_flutter/misc/images.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -10,7 +10,7 @@ class WidgetUtils {
   }
 
   //TODO change to prod key
-  static Widget getMapsImageWidget(String bankName, String city,String address) {
+  static Widget getMapsImageWidget(String bankName, String city, String address) {
     if (address != null && address.isNotEmpty) {
       Uri _staticMapUri = Uri.https("dev.virtualearth.net", "/REST/V1/Imagery/Map/Road/$bankName,$city}",
           {"mapSize": "500,300", "format": "png", "zoomLevel": "10", "key": BING_API_KEY});
@@ -19,7 +19,7 @@ class WidgetUtils {
           onTap: () {
             launchMapURL(address);
           },
-          child: FadeInImage.assetNetwork(placeholder: Maps_placeholder, image: _staticMapUri.toString()));
+          child: FadeInImage.assetNetwork(placeholder: mapsPlaceholder, image: _staticMapUri.toString()));
     }
 
     return Container();

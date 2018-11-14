@@ -1,6 +1,6 @@
-import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
-import 'package:bank_ifsc_flutter/utils/strings.dart';
-import 'package:bank_ifsc_flutter/utils/styles.dart';
+import 'package:bank_ifsc_flutter/utils/widget_utils.dart';
+import 'package:bank_ifsc_flutter/misc/strings.dart';
+import 'package:bank_ifsc_flutter/misc/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 
@@ -39,7 +39,7 @@ class BankBalanceDetailPage extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       bankName,
-                      style: TextStyle(fontSize: Font_Size_Page_title, color: Colors.white),
+                      style: TextStyle(fontSize: fontSizePageTitle, color: Colors.white),
                     ),
                     SizedBox(height: 16.0),
                     InkWell(
@@ -48,7 +48,7 @@ class BankBalanceDetailPage extends StatelessWidget {
                       },
                       child: Text(
                         officialWebsite,
-                        style: TextStyle(fontSize: Font_Size_Paragraph, color: Colors.white),
+                        style: TextStyle(fontSize: fontSizeParagraph, color: Colors.white),
                         maxLines: 1,
                       ),
                     ),
@@ -59,7 +59,7 @@ class BankBalanceDetailPage extends StatelessWidget {
                       },
                       child: Text(
                         personalWebsite,
-                        style: TextStyle(fontSize: Font_Size_Paragraph, color: Colors.white),
+                        style: TextStyle(fontSize: fontSizeParagraph, color: Colors.white),
                         maxLines: 1,
                       ),
                     )
@@ -100,7 +100,7 @@ class BankBalanceDetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(balanceCheckBankBalance,
-                      style: TextStyle(fontSize: Font_Size_List_Items, color: Theme.of(context).primaryColor)),
+                      style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).primaryColor)),
                   SizedBox(height: 24.0),
                   Text("Give a miss call to $bankName for checking balance"),
                 ],
@@ -129,7 +129,7 @@ class BankBalanceDetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 32.0),
                   Text(bankBalanceNum,
-                      style: TextStyle(fontSize: Font_Size_List_Items, color: Theme.of(context).accentColor)),
+                      style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).accentColor)),
                 ],
               ),
             ),
@@ -151,7 +151,7 @@ class BankBalanceDetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(balanceCheckMiniStatement,
-                      style: TextStyle(fontSize: Font_Size_List_Items, color: Theme.of(context).primaryColor)),
+                      style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).primaryColor)),
                   SizedBox(height: 24.0),
                   Text("Give a miss call to $bankName for check mini statement"),
                 ],
@@ -180,7 +180,7 @@ class BankBalanceDetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 32.0),
                   Text(miniStatementNum,
-                      style: TextStyle(fontSize: Font_Size_List_Items, color: Theme.of(context).accentColor)),
+                      style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).accentColor)),
                 ],
               ),
             ),
@@ -202,7 +202,7 @@ class BankBalanceDetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(balanceCheckCustomerCare,
-                      style: TextStyle(fontSize: Font_Size_List_Items, color: Theme.of(context).primaryColor)),
+                      style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).primaryColor)),
                   SizedBox(height: 24.0),
                   Text("Call to $bankName for other request"),
                 ],
@@ -231,7 +231,7 @@ class BankBalanceDetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 32.0),
                   Text(customerCareNum,
-                      style: TextStyle(fontSize: Font_Size_List_Items, color: Theme.of(context).accentColor)),
+                      style: TextStyle(fontSize: fontSizeListItems, color: Theme.of(context).accentColor)),
                 ],
               ),
             ),

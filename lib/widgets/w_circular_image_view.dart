@@ -7,7 +7,7 @@ class CircularImageView extends StatelessWidget {
 
   CircularImageView(this.text);
 
-  List colors = [
+  final List colors = [
     Color(0xffe57373),
     Color(0xfff06292),
     Color(0xffba68c8),
@@ -27,7 +27,7 @@ class CircularImageView extends StatelessWidget {
     Color(0xff90a4ae)
   ];
 
-  Random random = new Random();
+  final Random random = new Random();
 
   @override
   Widget build(BuildContext context) {

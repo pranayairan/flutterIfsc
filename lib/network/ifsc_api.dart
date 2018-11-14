@@ -16,18 +16,23 @@ class IfscAPI {
 
   final Logger logger = Logger("IfscAPI");
 
+  final Map<String, String> headers = {"Accept": "application/json", "Content-Type": "multipart/form-data"};
+
   HttpWithMiddleware httpClient = HttpWithMiddleware.build(
       middlewares:
           Application.isInDebugMode ? [HttpLogger(logLevel: LogLevel.BODY)] : [HttpLogger(logLevel: LogLevel.NONE)]);
 
-  final Map<String, String> headers = {"Accept": "application/json", "Content-Type": "multipart/form-data"};
-
-  /// Method to get search bank
+  /// API to get list of banks provided a bank name, state, city
+  /// branch is optional.
   Future<ResponseModel<List<BankData>>> searchBank(
       {String bankName, String bankState, String bankCity, String bankBranch, String pageNumber}) async {
-    Map<String, dynamic> bankRequestData = {'bankname': bankName, 'encodedon': DateTime.now().millisecondsSinceEpoch};
-    bankRequestData["state"] = bankState;
-    bankRequestData["city"] = bankCity;
+    Map<String, dynamic> bankRequestData = {
+      'bankname': bankName,
+      'encodedon': DateTime.now().millisecondsSinceEpoch,
+      'state': bankState,
+      'city': bankCity,
+    };
+
     if (bankBranch != null && bankBranch.isNotEmpty) {
       bankRequestData["branch"] = bankBranch;
     }
@@ -38,7 +43,7 @@ class IfscAPI {
     http.Response response = await httpClient.post(url, headers: headers, body: json.encode(bankRequestData));
 
     if (response.statusCode == 200) {
-      List<BankData> parseResult = _parseResult(response.body);
+      List<BankData> parseResult = _parseBankResult(response.body);
       return ResponseModel(errorCode: response.statusCode, data: parseResult, errorMessage: null);
     } else {
       logger.severe("Unable to load bank detils via IFSC, $response");
@@ -55,7 +60,7 @@ class IfscAPI {
     http.Response response = await httpClient.post(url, headers: headers, body: json.encode(bankRequestData));
 
     if (response.statusCode == 200) {
-      List<BankData> parseResult = _parseResult(response.body);
+      List<BankData> parseResult = _parseBankResult(response.body);
       return ResponseModel(errorCode: response.statusCode, data: parseResult, errorMessage: null);
     } else {
       logger.severe("Unable to load bank detils via IFSC, $response");
@@ -84,7 +89,7 @@ class IfscAPI {
   }
 
   /// Method to parse the bank result json from server
-  List<BankData> _parseResult(String responseBody) {
+  List<BankData> _parseBankResult(String responseBody) {
     List<BankData> bankList = List();
     try {
       final List<Map<String, dynamic>> productListData = List.from(json.decode(responseBody));

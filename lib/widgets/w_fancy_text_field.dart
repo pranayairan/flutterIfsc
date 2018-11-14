@@ -1,4 +1,4 @@
-import 'package:bank_ifsc_flutter/utils/styles.dart';
+import 'package:bank_ifsc_flutter/misc/styles.dart';
 import 'package:flutter/material.dart';
 
 class FancyTextField extends StatefulWidget {
@@ -59,7 +59,7 @@ class _FancyTextFieldState extends State<FancyTextField> {
       key: widget.key,
       style: TextStyle(
         color: Colors.white,
-        fontSize: Font_Size_Text_Input,
+        fontSize: fontSizeTextInput,
       ),
     );
   }

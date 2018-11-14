@@ -3,7 +3,7 @@ import 'package:bank_ifsc_flutter/config/routes.dart';
 import 'package:bank_ifsc_flutter/network/model/bank_care_data.dart';
 import 'package:flutter/material.dart';
 
-import 'CircularImageView.dart';
+import 'w_circular_image_view.dart';
 
 class BankCard extends StatelessWidget {
   final BankCareData bankData;

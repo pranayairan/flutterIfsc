@@ -1,11 +1,11 @@
-import 'package:bank_ifsc_flutter/network/IfscApi.dart';
+import 'package:bank_ifsc_flutter/network/ifsc_api.dart';
 import 'package:bank_ifsc_flutter/network/model/bank_data.dart';
 import 'package:bank_ifsc_flutter/network/model/response_model.dart';
-import 'package:bank_ifsc_flutter/utils/UiUtils.dart';
-import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
-import 'package:bank_ifsc_flutter/utils/images.dart';
-import 'package:bank_ifsc_flutter/utils/strings.dart';
-import 'package:bank_ifsc_flutter/widgets/VerticalDivider.dart';
+import 'package:bank_ifsc_flutter/utils/ut_utils.dart';
+import 'package:bank_ifsc_flutter/utils/widget_utils.dart';
+import 'package:bank_ifsc_flutter/misc/images.dart';
+import 'package:bank_ifsc_flutter/misc/strings.dart';
+import 'package:bank_ifsc_flutter/widgets/w_vertical_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 
@@ -95,14 +95,14 @@ class _BankDetailsPageState extends State<BankDetailsPage> {
 //                      ),
 //                      VerticalDivider(),
                       InkWell(
-                        child: _getImageAndTextWidget(Save_Sms, bankDetailsSms),
+                        child: _getImageAndTextWidget(saveSms, bankDetailsSms),
                         onTap: () {
                           _share();
                         },
                       ),
                       VerticalDivider(),
                       InkWell(
-                        child: _getImageAndTextWidget(Save_Whatsapp, bankDetailsWhatsapp),
+                        child: _getImageAndTextWidget(saveWhatsapp, bankDetailsWhatsapp),
                         onTap: () {
                           _share();
                         },

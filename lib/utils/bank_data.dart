@@ -1,4 +1,4 @@
-List<String> Bank_Name_List = [
+List<String> bankNameList = [
   "A P MAHESH CO-OP URBAN BANK LTD.",
   "ABHYUDAYA COOPERATIVE BANK LIMITED",
   "ABU DHABI COMMERCIAL BANK",

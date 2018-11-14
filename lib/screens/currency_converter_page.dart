@@ -1,8 +1,8 @@
-import 'package:bank_ifsc_flutter/network/OtherApi.dart';
+import 'package:bank_ifsc_flutter/network/other_api.dart';
 import 'package:bank_ifsc_flutter/network/model/response_model.dart';
-import 'package:bank_ifsc_flutter/utils/CommonUtils.dart';
-import 'package:bank_ifsc_flutter/utils/WidgetUtils.dart';
-import 'package:bank_ifsc_flutter/utils/strings.dart';
+import 'package:bank_ifsc_flutter/utils/common_utils.dart';
+import 'package:bank_ifsc_flutter/utils/widget_utils.dart';
+import 'package:bank_ifsc_flutter/misc/strings.dart';
 import 'package:flutter/material.dart';
 
 class CurrencyConverterPage extends StatefulWidget {
