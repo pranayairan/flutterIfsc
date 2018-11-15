@@ -22,6 +22,19 @@ This app would have not been possible without Awesome support from Flutter commu
 * [Share](https://pub.dartlang.org/packages/share) - Enables share functionality in flutter apps
 * [Autocomplete TextField](https://pub.dartlang.org/packages/autocomplete_textfield) - Android style autocomplete EditBox to give suggestions inline. 
 
-## Videos
-
 ## Screenshots
+<a href="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_home.png"><img src="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_home.png" height="240" width="120" ></a>
+<a href="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_bank_search.png"><img src="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_bank_search.png" height="240" width="120" ></a>
+<a href="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_bank_details.png"><img src="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_bank_details.png" height="240" width="120" ></a>
+<a href="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_misscall_balance.png"><img src="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_misscall_balance.png" height="240" width="120" ></a>
+<a href="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_customer_care.png"><img src="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_customer_care.png" height="240" width="120" ></a>
+<a href="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_compound.png"><img src="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_compound.png" height="240" width="120" ></a>
+<a href="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_emi.png"><img src="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_emi.png" height="240" width="120" ></a>
+<a href="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_currency.png"><img src="https://raw.githubusercontent.com/pranayairan/flutterIfsc/master/ifsc_currency.png" height="240" width="120" ></a>
+
+
+## Videos/Gifs
+![iOS App](https://s2.gifyu.com/images/ifsc_ios.gif)
+
+## Youtube
+https://youtu.be/SBDOd3brttY
