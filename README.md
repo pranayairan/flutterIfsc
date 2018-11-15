@@ -34,7 +34,8 @@ This app would have not been possible without Awesome support from Flutter commu
 
 
 ## Videos/Gifs
-![iOS App](https://s2.gifyu.com/images/ifsc_ios.gif)
+![Android App](ifsc_android.gif)
+![iOS App](ifsc_ios.gif)
 
 ## Youtube
 https://youtu.be/SBDOd3brttY
